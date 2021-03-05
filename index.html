@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    .button:hover {
+        background-color: #3e8e41
+    }
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITHUB-SEARCH</title>
+</head>
+
+<body>
+    <h2 style="text-align:center;"> GITHUB-REPOSITORY-SEARCH</h2>
+    <br><br>
+    <script type="text/javascript" src="script.js"></script>
+    <input type="text" id="org" placeholder="Organisation" />
+    <input type="text" id="nrepo" placeholder="Enter n" />
+    <input type="text" id="mcom" placeholder="Enter m" />
+    <button id="btn" class="button" onclick="showData()" style="background-color:cyan;" required>Search</button>
+    <p id="data"> </p>
+    <p id="data1" style="text-align:center;"> </p>
+</body>
+
+</html>
