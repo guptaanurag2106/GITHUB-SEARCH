@@ -10,14 +10,14 @@ function showData() {
     var para2 = document.getElementById("data1")
 
     const headers = {
-        "Authorization": 'Token 9c2efb43ebc9d87a1580a6e75c09a188e78cd206'
+        "Authorization": 'Token d74198808d4c2adb0827864cec19fc9e0da27fe6'
     }
 
     function compare(a, b) {
-        if (a.forks < b.forks) {
+        if (a[0] < b[0]) {
             return 1;
         }
-        if (a.forks > b.forks) {
+        if (a[0] > b[0]) {
             return -1;
         }
         return 0;
@@ -30,9 +30,10 @@ function showData() {
 
     function def(data) {
         for (i = 0; i < data.length; i++) {
-            repo_list.push(data[i]);
-            repo_list.sort(compare);
+            repo_list.push([data[i].forks, data[i].name]);
+
         }
+        repo_list.sort(compare);
     }
     for (var j = 1; j < 70; j++) {
         var url = "https://api.github.com/orgs/" + org + "/repos?page=" + j.toString()
@@ -43,5 +44,11 @@ function showData() {
     }
 
     console.log(repo_list)
+
+
+    para2.innerHTML = repo_list
+    // for (var i = 0; i < n; i++) {
+    //     para2.innerHTML += repo_list[i][0]
+    // }
 
 }
